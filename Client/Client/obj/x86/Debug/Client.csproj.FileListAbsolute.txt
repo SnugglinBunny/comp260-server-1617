@@ -1,0 +1,18 @@
+D:\comp260-server-1617\Client\Client\bin\Debug\Client.exe
+D:\comp260-server-1617\Client\Client\bin\Debug\Client.pdb
+D:\comp260-server-1617\Client\Client\obj\x86\Debug\Client.csproj.CoreCompileInputs.cache
+D:\comp260-server-1617\Client\Client\obj\x86\Debug\Client.exe
+D:\comp260-server-1617\Client\Client\obj\x86\Debug\Client.pdb
+D:\comp260-server-1617\Client\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
+x:\Users\Narwhal\Downloads\steve\Client\Client\bin\Debug\Client.exe
+x:\Users\Narwhal\Downloads\steve\Client\Client\bin\Debug\Client.pdb
+x:\Users\Narwhal\Downloads\steve\Client\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
+x:\Users\Narwhal\Downloads\steve\Client\Client\obj\x86\Debug\Client.csproj.CoreCompileInputs.cache
+x:\Users\Narwhal\Downloads\steve\Client\Client\obj\x86\Debug\Client.exe
+x:\Users\Narwhal\Downloads\steve\Client\Client\obj\x86\Debug\Client.pdb
+H:\Other\University\Second Semester\COMP260 - Distributed Systems\comp260-server-1617\Client\Client\bin\Debug\Client.exe
+H:\Other\University\Second Semester\COMP260 - Distributed Systems\comp260-server-1617\Client\Client\bin\Debug\Client.pdb
+H:\Other\University\Second Semester\COMP260 - Distributed Systems\comp260-server-1617\Client\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
+H:\Other\University\Second Semester\COMP260 - Distributed Systems\comp260-server-1617\Client\Client\obj\x86\Debug\Client.csproj.CoreCompileInputs.cache
+H:\Other\University\Second Semester\COMP260 - Distributed Systems\comp260-server-1617\Client\Client\obj\x86\Debug\Client.exe
+H:\Other\University\Second Semester\COMP260 - Distributed Systems\comp260-server-1617\Client\Client\obj\x86\Debug\Client.pdb
