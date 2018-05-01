@@ -1,0 +1,5 @@
+/home/narwhal/Downloads/comp260-server-1617/Assignment 2/WindowsServerLinux/WindowsServerLinux/bin/Debug/WindowsServerLinux.exe
+/home/narwhal/Downloads/comp260-server-1617/Assignment 2/WindowsServerLinux/WindowsServerLinux/bin/Debug/WindowsServerLinux.pdb
+/home/narwhal/Downloads/comp260-server-1617/Assignment 2/WindowsServerLinux/WindowsServerLinux/obj/x86/Debug/WindowsServerLinux.csproj.CoreCompileInputs.cache
+/home/narwhal/Downloads/comp260-server-1617/Assignment 2/WindowsServerLinux/WindowsServerLinux/obj/x86/Debug/WindowsServerLinux.exe
+/home/narwhal/Downloads/comp260-server-1617/Assignment 2/WindowsServerLinux/WindowsServerLinux/obj/x86/Debug/WindowsServerLinux.pdb

@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{1A10A6B0-A768-4FBC-BE5E-15AC28BB760C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WindowsServerLinux/Program.cs">
+    <Files>
+      <File FileName="WindowsServerLinux/Program.cs" Line="118" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.WindowsServerLinux PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
