@@ -8,6 +8,8 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Collections.Concurrent;
 
+using Mono.Data.Sqlite;
+
 namespace MUDServer
 {
     class Program
