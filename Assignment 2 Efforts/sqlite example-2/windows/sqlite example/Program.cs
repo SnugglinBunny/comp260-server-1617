@@ -295,14 +295,6 @@ namespace Server
                 }
 
                 Thread.Sleep(1);
-
-                lock (clientDictionary)
-                {
-                    foreach (KeyValuePair<String, Socket> test in clientDictionary)
-                    {
-
-                    }
-                }
             }
         }
     }

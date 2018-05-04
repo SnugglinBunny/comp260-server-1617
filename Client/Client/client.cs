@@ -29,7 +29,7 @@ namespace Client
                     if (reciever > 0)
                     {
                         String clientMsg = encoder.GetString(receiveBuffer, 0, reciever);
-                        Console.Clear(); // Clears the screen when so its not crammed with every message
+                        //Console.Clear(); // Clears the screen when so its not crammed with every message
                         Console.WriteLine(clientMsg); // Prints replies from server
                     }
                 }
@@ -53,10 +53,12 @@ namespace Client
 
             while (connected == false)
             {
+                Console.WriteLine("Looking for server: " + ipLocal);
                 try
                 {
                     s.Connect(ipLocal);
-                    Console.WriteLine("Connected To Server \nWelcome To my MUD! \nType help to see commands list");
+                    Console.Clear();
+                    Console.WriteLine("Connected To Server\n\nType help for assistance");
 
                     connected = true;
                 }

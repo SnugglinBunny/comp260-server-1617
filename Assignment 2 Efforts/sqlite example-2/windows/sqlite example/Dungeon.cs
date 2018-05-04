@@ -23,13 +23,13 @@ namespace Server
     public class Dungeon
     {
         sqliteConnection conn = null;
-        string databaseName = "MUDData.database";
+        string databaseName = "MUDData.database"; // Creates a string with the database name
 
         string currentRoom;
 
         public void Init()
         {
-            var roomMap = new Dictionary<string, Room>();
+            var roomMap = new Dictionary<string, Room>(); // Creates dictionary of rooms
             {
                 var room = new Room("Room 1", "You are standing in the entrance hall\nAll adventures start here");
                 room.north = "Room 2";
@@ -175,26 +175,24 @@ namespace Server
                 room.west = "Room 18";
                 roomMap.Add(room.name, room);
             }
-
-            //currentRoom = roomMap["Room 0"];
             try
             {
-                sqliteConnection.CreateFile(databaseName);
+                sqliteConnection.CreateFile(databaseName); // Creates database file using the name string
 
-                conn = new sqliteConnection("Data Source=" + databaseName + ";Version=3;FailIfMissing=True");
+                conn = new sqliteConnection("Data Source=" + databaseName + ";Version=3;FailIfMissing=True"); // Inits connection to the database
 
-                sqliteCommand command;
+                sqliteCommand command; // Inits a new sql command
 
-                conn.Open();
+                conn.Open(); // Opens new connection
 
                 command = new sqliteCommand("create table table_rooms (name varchar(20), desc varchar(20), north varchar(20), south varchar(20), west varchar(20), east varchar(20))", conn);
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery(); // cCeates and executes sql command which creates the new rooms table
 
-                foreach (var kvp in roomMap)
+                foreach (var kvp in roomMap) // Here we go through each room in the dictionary and add it to the rooms table
                 {
                     try
                     {
-                        var sql = "insert into " + "table_rooms" + " (name, desc, north, south, west, east) values ";
+                        var sql = "insert into " + "table_rooms" + " (name, desc, north, south, west, east) values "; // Parsing the data into something sql can understand
                         sql += "('" + kvp.Key + "'";
                         sql += ",";
                         sql += "'" + kvp.Value.desc + "'";
@@ -213,19 +211,19 @@ namespace Server
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Failed to add room\n" + ex);
+                        Console.WriteLine("Failed to add room\n" + ex); // Prints if there is an error
                     }
                 }
                 try
                 {
                     Console.WriteLine("");
-                    command = new sqliteCommand("select * from " + "table_rooms" + " order by name asc", conn);
+                    command = new sqliteCommand("select * from " + "table_rooms", conn); // Cannot use " order by name asc" as it doesn't order numbers correctly
                     var reader = command.ExecuteReader();
 
                     while (reader.Read())
                     {
                         Console.WriteLine("Name: " + reader["name"] + " " + "Exits: " + reader["north"] + " " +
-                            reader["south"] + " " + reader["west"] + " " + reader["east"]);
+                            reader["south"] + " " + reader["west"] + " " + reader["east"]); // Prints each room added to table
                     }
 
                     reader.Close();
@@ -242,7 +240,7 @@ namespace Server
                 Console.WriteLine("Create DB failed: " + ex);
             }
 
-            currentRoom = "Room 0";
+            currentRoom = "Room 1"; // Sets the current room for each new player to room 1
 
         }
 
@@ -352,10 +350,10 @@ namespace Server
                     returnString += ("\nname - to set name your name");
                     returnString += ("\nsay - global chat");
                     returnString += ("\nlocal - local chat");
-                    returnString += ("\nExits");
                     return returnString;
 
                 case "name":
+                    Console.Clear();
                     String newName = "";
                     for (var i = 1; i < input.Length; i++)
                     {
@@ -366,12 +364,13 @@ namespace Server
                     return returnString;
 
                 case "look":
-                    //Console.Clear();
+                    Console.Clear();
                     Thread.Sleep(500);
                     returnString = DungeonInfo(player, false);
                     return returnString;
 
                 case "local":
+                    Console.Clear();
                     returnString += ("[local][" + player.playerName + "]");
                     for (var i = 1; i < input.Length; i++)
                     {
@@ -379,11 +378,10 @@ namespace Server
                     }
 
                     Thread.Sleep(1000);
-                    //returnString += DungeonInfo(player);
                     return returnString;
 
                 case "say":
-                    //returnString += ("[Player " + PlayerID + "]");
+                    Console.Clear();
                     returnString += ("[global][" + player.playerName + "]");
                     for (var i = 1; i < input.Length; i++)
                     {
@@ -391,35 +389,14 @@ namespace Server
                     }
 
                     Thread.Sleep(1000);
-                    //returnString += DungeonInfo(player);
                     return returnString;
 
                 case "go":
-
-                    //var command = new sqliteCommand("select * from  table_rooms where name == '" + currentRoom + "'", conn);
-                    //var reader = command.ExecuteReader();
-
                     while (reader.Read())
                     {
-                        //returnString += ("Name: " + reader["name"] + "\tdesc: " + reader["desc"]); returnString += "\n";
-                        //returnString += (reader["desc"]); returnString += "\n";
-                        //returnString += ("Exits"); returnString += "\n";
-
-                        //String[] temp = { "north", "south", "east", "west" };
-
-                        //for (var i = 0; i < temp.Length; i++)
-                        //{
-                        //    if (reader[temp[i]] != null)
-                        //    {
-                        //        returnString += (reader[temp[i]] + " ");
-                        //    }
-                        //}
-
-
-
-                        if ((input[1].ToLower() == "north") && (reader["north"] != null))
+                        if ((input[1].ToLower() == "north") && (reader["north"] != null)) // If user says go north
                         {
-                            currentRoom = reader["north"].ToString();
+                            currentRoom = reader["north"].ToString(); // Attempts to go north
                         }
                         else
                         {
@@ -441,7 +418,7 @@ namespace Server
                                     }
                                     else
                                     {
-                                        //handle error
+                                        // Handles Errors
                                         Console.WriteLine("\nERROR");
                                         Console.WriteLine("\nCan not go " + input[1] + " from here");
                                         Console.WriteLine("\nPress any key to continue");
@@ -455,20 +432,13 @@ namespace Server
                         if (!error)
                         {
                             roomUpdate(player, currentRoom);
-                            //DungeonInfo(player, false);
                         }
 
                     }
-
-                    //bool error = false;
-                    //if (!error)
-                    //{
-                    //    roomUpdate(player, currentRoom);
-                    //}
                     returnString += DungeonInfo(player, true);
                     return returnString;
 
-                default:
+                default: // This is the default message if something is typed that doesn't match a command like above
                     returnString += ("\nERROR");
                     returnString += ("\nCan not " + Key);
                     returnString += ("\nPress any key to continue");
