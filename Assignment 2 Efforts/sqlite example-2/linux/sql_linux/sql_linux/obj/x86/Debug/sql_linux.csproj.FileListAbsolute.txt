@@ -1,0 +1,5 @@
+/home/narwhal/Documents/comp260-server-1617/Assignment 2 Efforts/sqlite example-2/linux/sql_linux/sql_linux/bin/Debug/sql_linux.exe
+/home/narwhal/Documents/comp260-server-1617/Assignment 2 Efforts/sqlite example-2/linux/sql_linux/sql_linux/bin/Debug/sql_linux.pdb
+/home/narwhal/Documents/comp260-server-1617/Assignment 2 Efforts/sqlite example-2/linux/sql_linux/sql_linux/obj/x86/Debug/sql_linux.csproj.CoreCompileInputs.cache
+/home/narwhal/Documents/comp260-server-1617/Assignment 2 Efforts/sqlite example-2/linux/sql_linux/sql_linux/obj/x86/Debug/sql_linux.exe
+/home/narwhal/Documents/comp260-server-1617/Assignment 2 Efforts/sqlite example-2/linux/sql_linux/sql_linux/obj/x86/Debug/sql_linux.pdb

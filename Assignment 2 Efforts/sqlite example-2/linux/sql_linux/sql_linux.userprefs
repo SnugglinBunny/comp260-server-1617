@@ -1,13 +1,14 @@
-﻿<Properties StartupItem="sql_linux/sql_linux.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../sql_example.cs">
+﻿<Properties StartupConfiguration="{078DEAB0-D333-43A6-8521-FC49CDFBA7FB}|Default">
+  <MonoDevelop.Ide.ItemProperties.sql__linux PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="sql_linux/Program.cs">
     <Files>
-      <File FileName="sql_linux/Program.cs" Line="1" Column="1" />
-      <File FileName="../../sql_example.cs" Line="19" Column="7" />
+      <File FileName="sql_linux/Program.cs" Line="201" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
