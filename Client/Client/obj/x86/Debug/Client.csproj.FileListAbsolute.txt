@@ -22,3 +22,9 @@ G:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed System
 G:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\obj\x86\Debug\Client.csproj.CoreCompileInputs.cache
 G:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\obj\x86\Debug\Client.exe
 G:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\obj\x86\Debug\Client.pdb
+D:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\bin\Debug\Client.exe
+D:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\bin\Debug\Client.pdb
+D:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
+D:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\obj\x86\Debug\Client.csproj.CoreCompileInputs.cache
+D:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\obj\x86\Debug\Client.exe
+D:\Other\Computing for Games\Year 2\Second Semester\COMP260 - Distributed Systems\Assignments\comp260-server-1617\Client\Client\obj\x86\Debug\Client.pdb

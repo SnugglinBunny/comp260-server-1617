@@ -29,7 +29,6 @@ namespace Client
                     if (reciever > 0)
                     {
                         String clientMsg = encoder.GetString(receiveBuffer, 0, reciever);
-                        //Console.Clear(); // Clears the screen when so its not crammed with every message
                         Console.WriteLine(clientMsg); // Prints replies from server
                     }
                 }
@@ -59,7 +58,6 @@ namespace Client
                     s.Connect(ipLocal);
                     Console.Clear();
                     Console.WriteLine("Connected To Server\n\nType help for assistance");
-
                     connected = true;
                 }
                 catch (Exception)

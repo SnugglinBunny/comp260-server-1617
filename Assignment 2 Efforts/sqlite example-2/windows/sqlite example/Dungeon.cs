@@ -341,7 +341,6 @@ namespace Server
             switch (input[0].ToLower())
             {
                 case "help":
-                    Console.Clear();
                     returnString += ("\nCommands are ....");
                     returnString += ("\nhelp - for this screen");
                     returnString += ("\nlook - to look around");
@@ -349,28 +348,25 @@ namespace Server
                     returnString += ("\nPress any key to continue");
                     returnString += ("\nname - to set name your name");
                     returnString += ("\nsay - global chat");
-                    returnString += ("\nlocal - local chat");
+                    returnString += ("\nlocal - local chat\n\n" + DungeonInfo(player, true));
                     return returnString;
 
                 case "name":
-                    Console.Clear();
                     String newName = "";
                     for (var i = 1; i < input.Length; i++)
                     {
                         newName += (input[i]);
                     }
                     player.playerName = (newName);
-                    returnString += ("\nNice to meet you " + newName);
+                    returnString += ("\nNice to meet you " + newName + "\n\n" + DungeonInfo(player, true));
                     return returnString;
 
                 case "look":
-                    Console.Clear();
                     Thread.Sleep(500);
                     returnString = DungeonInfo(player, false);
                     return returnString;
 
                 case "local":
-                    Console.Clear();
                     returnString += ("[local][" + player.playerName + "]");
                     for (var i = 1; i < input.Length; i++)
                     {
@@ -381,7 +377,6 @@ namespace Server
                     return returnString;
 
                 case "say":
-                    Console.Clear();
                     returnString += ("[global][" + player.playerName + "]");
                     for (var i = 1; i < input.Length; i++)
                     {
