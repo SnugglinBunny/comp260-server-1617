@@ -11,34 +11,43 @@ namespace Client
 {
     class client
     {
+        static LinkedList<String> incommingMessages = new LinkedList<string>();
+
+        static void serverReceiveThread(Object obj)
+        {
+            ASCIIEncoding encoder = new ASCIIEncoding();
+            byte[] receiveBuffer = new byte[8192];
+
+            Socket s = obj as Socket;
+
+            while (true)
+            {
+                try
+                {
+                    int reciever = s.Receive(receiveBuffer);
+                    s.Receive(receiveBuffer);
+                    if (reciever > 0)
+                    {
+                        String clientMsg = encoder.GetString(receiveBuffer, 0, reciever);
+                        Console.Clear(); // Clears the screen when so its not crammed with every message
+                        Console.WriteLine(clientMsg); // Prints replies from server
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    Console.WriteLine(ex); // Prints any errors
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
-            string ServerIP = "127.0.0.1";
-            int Port = 8221;
-            String UserID = null;
 
-            Console.WriteLine("Please enter a username:");
-            UserID = Console.ReadLine();
-            Console.WriteLine("Welcome to my MUD " + UserID);
-
-            Console.WriteLine("Would you like to connect to this server?\n" + ServerIP + ":" + Port);
-            String newServer = Console.ReadLine();
-            if (newServer == "yes")
-            {
-                Console.WriteLine("Connecting to server " + ServerIP + ":" + Port + "...");
-            }
-            else
-            {
-                Console.WriteLine("Firstly, what IP would you like to connect to?");
-                ServerIP = Console.ReadLine();
-                Console.WriteLine("And what Port?");
-                Port = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Thank you, the new IP and Port are: " + ServerIP + ":" + Port + "\n Trying Server, please wait...");
-            }
+            string ipAdress = "127.0.0.1"; // Server IP 165.227.225.88
+            int port = 8221;
 
             Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-            IPEndPoint Server = new IPEndPoint(IPAddress.Parse(ServerIP), Port);
+            IPEndPoint ipLocal = new IPEndPoint(IPAddress.Parse(ipAdress), port);
 
             bool connected = false;
 
@@ -46,50 +55,42 @@ namespace Client
             {
                 try
                 {
-                    s.Connect(Server);
+                    s.Connect(ipLocal);
+                    Console.WriteLine("Connected To Server \nWelcome To my MUD! \nType help to see commands list");
+
                     connected = true;
-                    Console.WriteLine("Connected to Server!");
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Cannot find server, retrying...");
                     Thread.Sleep(1000);
                 }
             }
 
             int ID = 0;
 
+
+            var myThread = new Thread(serverReceiveThread);
+            myThread.Start(s);
+
+            ASCIIEncoding encoder = new ASCIIEncoding();
+            byte[] buffer = new byte[4096];
+
             while (true)
             {
-                //Console.Clear();
-                Console.Write("\n> ");
                 String ClientText = Console.ReadLine();
-                String Msg = ID.ToString() + ClientText; // " testing, testing, 1,2,3";
                 ID++;
-                ASCIIEncoding encoder = new ASCIIEncoding();
-                byte[] buffer = encoder.GetBytes(ClientText);
+                buffer = encoder.GetBytes(ClientText);
 
                 try
                 {
+                    // Writes messages to server
                     Console.WriteLine("Writing to server: " + ClientText);
                     int bytesSent = s.Send(buffer);
-
-                    buffer = new byte[4096];
-                    int reciever = s.Receive(buffer);
-                    if (reciever > 0)
-                    {
-                        Console.Clear();
-                        String userCmd = encoder.GetString(buffer, 0, reciever);
-                        Console.WriteLine(userCmd);
-                    }
                 }
                 catch (System.Exception ex)
                 {
-                    Console.WriteLine(ex);	
+                    Console.WriteLine(ex);
                 }
-                
-
-                //Thread.Sleep(1000);
             }
         }
     }
