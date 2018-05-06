@@ -31,7 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="Mono.Data.Sqlite">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>

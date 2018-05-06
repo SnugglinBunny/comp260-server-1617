@@ -4,6 +4,19 @@
     <Files>
       <File FileName="sql_linux/Program.cs" Line="201" Column="46" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="sql_linux" expanded="True">
+            <Node name="sql_linux" expanded="True">
+              <Node name="References" expanded="True">
+                <Node name="Mono.Data.Sqlite, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
