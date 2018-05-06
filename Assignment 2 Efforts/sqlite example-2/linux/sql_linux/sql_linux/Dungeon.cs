@@ -23,7 +23,7 @@ namespace Server
     public class Dungeon
     {
         sqliteConnection conn = null;
-        string databaseName = "./MUDData.database"; // Creates a string with the database name
+        string databaseName = "./home/JR191353/MUDData.database"; // Creates a string with the database name
 
         string currentRoom;
 
