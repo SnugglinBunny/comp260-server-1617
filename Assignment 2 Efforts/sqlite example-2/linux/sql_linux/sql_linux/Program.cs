@@ -198,8 +198,8 @@ namespace Server
 
             // Server IP 165.227.225.88
             // Local IP 127.0.0.1:8221
-            string ipAdress = "165.227.225.88"; 
-            int port = 22;
+            string ipAdress = "127.0.0.1"; 
+            int port = 8221;
 
             Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPEndPoint ipLocal = new IPEndPoint(IPAddress.Parse(ipAdress), port);
